@@ -182,7 +182,7 @@ class RadioController: UIViewController, RadioMetadataListener {
             guard let data = data else { return }
             
             let a = self.parserJSON(data: data as NSData) as String
-            DispatchQueue.main.async {
+            DispatchQueue.main.sync {
                 self.labelTrackTitle.text = a
                 self.labelTrackTitle.isHidden = false
             }
