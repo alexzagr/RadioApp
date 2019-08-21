@@ -15,7 +15,7 @@ protocol RadioMetadataListener: class {
 }
 
 struct Constants {
-    static let urlMainSite: URL = URL(string: "http://")!
+    static let urlMainSite = URL(string: "http://")!
     static let urlAboutUs = URL(string: "http://")!
     static let urlStream = URL(string:"http://")!
     static let urlSongProperties = URL(string: "http://")
