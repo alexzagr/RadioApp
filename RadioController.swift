@@ -217,12 +217,15 @@ class RadioController: UIViewController, RadioMetadataListener {
                                 
                             }
                             
-                        } else if let currentShowName: NSString = ((myDictionary["currentShow"] as! NSArray).firstObject as! NSDictionary)["name"] as? NSString {
+                        } else if let currentShowName: NSArray = myDictionary["currentShow"] as? NSArray {
                             
-                            return currentShowName
-                            
-                        } else {
-                            return "НАПОЙ СЕМЬЮ"
+                            if let firstObject: NSDictionary = currentShowName.firstObject as? NSDictionary {
+                                
+                                if let name = firstObject["name"] as? NSString {
+                                    return name
+                                    
+                                }
+                            }
                             
                         }
                         
@@ -234,7 +237,7 @@ class RadioController: UIViewController, RadioMetadataListener {
             
         }
         
-        return ""
+        return "НЕ В ЭФИРЕ"
     }
     
     func animateLogo() {
