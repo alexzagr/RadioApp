@@ -69,8 +69,7 @@ class RadioListener: NSObject {
     }
     
     func createObservers() {
-        unowned let bySelf = self
-        self.audioItem.addObserver(bySelf, forKeyPath: "commonMetadata", options: NSKeyValueObservingOptions(), context: nil)
+        self.audioItem.addObserver(self, forKeyPath: "commonMetadata", options: NSKeyValueObservingOptions(), context: nil)
     }
     
     func removeObservers() {
